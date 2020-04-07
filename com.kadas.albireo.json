@@ -1,0 +1,101 @@
+{
+    "id" : "org.qgis.qgis",
+    "branch" : "stable",
+    "base": "io.qt.qtwebkit.BaseApp",
+    "base-version": "5.14",
+    "runtime" : "org.kde.Platform",
+    "runtime-version" : "5.14",
+    "sdk" : "org.kde.Sdk",
+    "command" : "qgis",
+    "rename-icon": "qgis",
+    "finish-args" : [
+        "--env=LD_LIBRARY_PATH=/app/lib:/app/grass76/lib",
+        "--share=ipc",
+        "--share=network",
+        "--socket=x11",
+        "--filesystem=host",
+        "--device=dri"
+    ],
+    "separate-locales" : false,
+    "build-options" : {
+        "env" : {
+            "PYTHONPATH" : "/app/lib/python3.7/site-packages:/usr/lib/python3.7/site-packages"
+        }
+    },
+    "modules" : [
+        "../org.qgis.qgis/qgis.json",
+        {
+            "name": "osg",
+            "buildsystem": "cmake-ninja",
+            "config-opts" : [ "-DCMAKE_BUILD_TYPE=Release" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/openscenegraph/OpenSceneGraph.git",
+                    "branch" : "OpenSceneGraph-3.6.5"
+                }
+            ]
+        },
+        {
+            "name": "osgearth",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/gwaldron/osgearth",
+                    "branch": "osgearth-2.10.2"
+                }
+            ]
+        },
+        {
+            "name": "osgearth-qt",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/openscenegraph/osgQt.git",
+                    "branch": "3.5.7"
+                }
+            ]
+        },
+        {
+            "name" : "geographiclib",
+            "buildsystem" : "cmake-ninja",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://git.code.sf.net/p/geographiclib/code",
+                    "branch" : "r1.50.1"
+                }
+            ]
+        },
+        {
+            "name" : "python-geographiclib",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "python3 setup.py build",
+                "python3 setup.py install --prefix=/app --root=/ --optimize=1"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://files.pythonhosted.org/packages/source/g/geographiclib/geographiclib-1.50.tar.gz",
+                    "sha256" : "12bd46ee7ec25b291ea139b17aa991e7ef373e21abd053949b75c0e9ca55c632"
+                }
+            ]
+        },
+        {
+            "name": "kadas-albireo",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/", "-DOSGEARTHQT_LIBRARY=/app/lib64/libosgQt5.so" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/kadas-albireo/kadas-albireo2.git"
+                }
+            ]
+        }
+    ]
+}
