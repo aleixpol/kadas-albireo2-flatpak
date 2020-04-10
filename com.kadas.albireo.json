@@ -23,7 +23,7 @@
         }
     },
     "modules" : [
-        "../org.qgis.qgis/qgis.json",
+        "qgis.json",
         {
             "name": "osg",
             "buildsystem": "cmake-ninja",
