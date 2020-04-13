@@ -9,7 +9,7 @@
         }
     ],
     "config-opts" : [
-        "-DWITH_3D=TRUE",
+        "-DWITH_3D=FALSE",
         "-DBINDINGS_GLOBAL_INSTALL=TRUE",
         "-DENABLE_TESTS=FALSE",
         "-DGRASS_PREFIX7=/app/grass76",
