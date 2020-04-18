@@ -37,19 +37,7 @@
             ]
         },
         {
-            "name": "osgearth",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/gwaldron/osgearth",
-                    "branch": "osgearth-2.10.2"
-                }
-            ]
-        },
-        {
-            "name": "osgearth-qt",
+            "name": "osg-qt",
             "buildsystem": "cmake-ninja",
             "config-opts": [ "-DCMAKE_BUILD_TYPE=Release" ],
             "sources": [
@@ -57,6 +45,22 @@
                     "type": "git",
                     "url": "https://github.com/openscenegraph/osgQt.git",
                     "branch": "3.5.7"
+                }
+            ]
+        },
+        {
+            "name": "osgearth",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_OSGEARTHQT=ON", "-DOSGEARTH_ENABLE_FASTDXT=False" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/gwaldron/osgearth",
+                    "branch": "osgearth-2.10.2"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/osgearth_osgearthqt.patch"
                 }
             ]
         },
