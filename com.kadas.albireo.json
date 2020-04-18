@@ -103,6 +103,18 @@
             ]
         },
         {
+            "name": "gdbhandler",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/manisandro/GdbCrashHandler.git",
+                    "branch": "0.3.0"
+                }
+            ]
+        },
+        {
             "name": "kadas-albireo",
             "buildsystem": "cmake-ninja",
             "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/", "-DOSGEARTHQT_LIBRARY=/app/lib64/libosgQt5.so" ],
