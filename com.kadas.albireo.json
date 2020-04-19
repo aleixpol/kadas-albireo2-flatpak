@@ -1,13 +1,12 @@
 {
-    "id" : "org.qgis.qgis",
+    "id" : "com.kadas.albireo",
     "branch" : "stable",
     "base": "io.qt.qtwebkit.BaseApp",
     "base-version": "5.14",
     "runtime" : "org.kde.Platform",
     "runtime-version" : "5.14",
     "sdk" : "org.kde.Sdk",
-    "command" : "qgis",
-    "rename-icon": "qgis",
+    "command" : "kadas",
     "finish-args" : [
         "--env=LD_LIBRARY_PATH=/app/lib:/app/grass76/lib",
         "--share=ipc",
