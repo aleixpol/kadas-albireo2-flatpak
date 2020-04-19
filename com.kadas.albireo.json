@@ -117,7 +117,7 @@
         {
             "name": "kadas-albireo",
             "buildsystem": "cmake-ninja",
-            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/", "-DOSGEARTHQT_LIBRARY=/app/lib64/libosgQt5.so" ],
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_MODULE_PATH=/app/share/cmake/Modules", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/" ],
             "sources": [
                 {
                     "type": "git",
