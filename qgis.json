@@ -13,7 +13,7 @@
         "-DBINDINGS_GLOBAL_INSTALL=TRUE",
         "-DENABLE_TESTS=FALSE",
         "-DGRASS_PREFIX7=/app/grass76",
-        "-DPYTHON_SITE_PACKAGES_DIR=/app/lib/python3.7/site-packages/qgis",
+        "-DPYTHON_SITE_PACKAGES_DIR=/app/lib/python3.7/site-packages/",
         "-DQWT_LIBRARY=/app/lib/libqwt.so"
     ],
     "modules" : [
