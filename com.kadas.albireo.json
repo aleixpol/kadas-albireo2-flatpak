@@ -114,17 +114,6 @@
             ]
         },
         {
-            "name": "kadas-albireo",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_MODULE_PATH=/app/share/cmake/Modules", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/kadas-albireo/kadas-albireo2.git"
-                }
-            ]
-        },
-        {
             "name" : "kadas-print-plugin",
             "buildsystem" : "simple",
             "sources" : [
@@ -193,6 +182,17 @@
                             "sha256": "4a03dd682f8e35a10234904e0b9508d705ff98cf962c5851ed052e9340df3d90"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "kadas-albireo",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DINSTALL_DEMO_DATA=ON", "-DCMAKE_MODULE_PATH=/app/share/cmake/Modules", "-DQGIS_PREFIX_PATH=/app", "-DQGIS_SIP_DIR=/app/share/sip/qgis/" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/kadas-albireo/kadas-albireo2.git"
                 }
             ]
         }
