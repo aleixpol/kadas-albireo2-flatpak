@@ -123,6 +123,66 @@
                     "url": "https://github.com/kadas-albireo/kadas-albireo2.git"
                 }
             ]
+        },
+        {
+            "name" : "kadas-print-plugin",
+            "buildsystem" : "simple",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/kadas-albireo/kadas-print-plugin.git"
+                }
+            ],
+            "build-commands" : [
+                "find . -type d",
+                "mkdir -p /app/share/kadas/python/plugins/",
+                "cp -r kadas_* /app/share/kadas/python/plugins/"
+            ]
+        },
+        {
+            "name" : "kadas-about-plugin",
+            "buildsystem" : "simple",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/kadas-albireo/kadas-about-plugin.git"
+                }
+            ],
+            "build-commands" : [
+                "find . -type d",
+                "mkdir -p /app/share/kadas/python/plugins/",
+                "cp -r kadas_* /app/share/kadas/python/plugins/"
+            ]
+        },
+        {
+            "name" : "kadas-help-plugin",
+            "buildsystem" : "simple",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/kadas-albireo/kadas-help-plugin.git"
+                }
+            ],
+            "build-commands" : [
+                "find . -type d",
+                "mkdir -p /app/share/kadas/python/plugins/",
+                "cp -r kadas_* /app/share/kadas/python/plugins/"
+            ]
+        },
+        {
+            "name" : "kadas-gpkg-plugin",
+            "buildsystem" : "simple",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/kadas-albireo/kadas-gpkg-plugin.git"
+                }
+            ],
+            "build-commands" : [
+                "find . -type d",
+                "mkdir -p /app/share/kadas/python/plugins/",
+                "cp -r kadas_* /app/share/kadas/python/plugins/"
+            ]
         }
     ]
 }
